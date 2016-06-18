@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.396692239/MINGW_HOME/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.396692239/MINGW_HOME/operation=replace
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.396692239/MINGW_HOME/value=C\:\\MinGW
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.396692239/VC++/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.396692239/VC++/operation=append
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.396692239/VC++/value=C\:\\Program Files (x86)\\Microsoft Visual Studio 14.0\\VC\\bin\\x86_amd64\\
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.396692239/append=true
+environment/project/cdt.managedbuild.config.gnu.mingw.exe.debug.396692239/appendContributed=true
