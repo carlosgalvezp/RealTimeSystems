@@ -158,25 +158,6 @@ void task2Code(void * pvParameters)
 	}
 }
 
-/* Function that creates a task. */
-BaseType_t createTask(const char* const task_name,
-					  const unsigned short stack_size,
-	                  const UBaseType_t priority,
-					  void(*callback)(void*),
-					  TaskHandle_t task_handle)
-{
-
-	/* Create the task, storing the handle. */
-	return xTaskCreate(
-		callback,       /* Function that implements the task. */
-		task_name,      /* Text name for the task. */
-		stack_size,     /* Stack size in words, not bytes. */
-		(void *)1,      /* Parameter passed into the task. */
-		priority,       /* Priority at which the task is created. */
-		&task_handle);      /* Used to pass out the created task's handle. */
-}
-
-
 int main(void)
 {
 	/* This demo uses heap_5.c, so start by defining some heap regions.  This
@@ -190,12 +171,9 @@ int main(void)
 	xTickTraceUserEvent = xTraceOpenLabel("tick");
 
 	// Create tasks
-	TaskHandle_t task1_handle = NULL;
-	TaskHandle_t task2_handle = NULL;
+	xTaskCreate(task1Code, "Task1", 1000U, (void *)1, 3U, NULL);
+	xTaskCreate(task2Code, "Task2", 500U,  (void *)1, 1U, NULL);
 
-	(void)createTask("Task1", 1000U, 3U, task1Code, task1_handle);
-	(void)createTask("Task2", 500U,  1U, task2Code, task2_handle);
-	
 	//This starts the real-time scheduler
 	vTaskStartScheduler();
 	for (;; );
